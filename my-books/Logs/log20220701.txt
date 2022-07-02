@@ -1,0 +1,73 @@
+07/01/2022 17:11:31 -06:00 [Information] - Message: This is just a log in GetAllPublishers
+2022-07-01 19:18:02.621 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-07-01 19:18:02.636 -06:00 [INF] Request starting HTTP/2 GET https://localhost:44308/api/publisher/get-all-publishers - -
+2022-07-01 19:18:02.643 -06:00 [INF] Hosting environment: Development
+2022-07-01 19:18:02.644 -06:00 [INF] Content root path: C:\Users\dmorales\source\repos\my-books\my-books\
+2022-07-01 19:18:02.767 -06:00 [INF] Executing endpoint 'my_books.Controllers.PublisherController.GetAllPublishers (my-books)'
+2022-07-01 19:18:02.784 -06:00 [INF] Route matched with {action = "GetAllPublishers", controller = "Publisher"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllPublishers(System.String, System.String, Int32) on controller my_books.Controllers.PublisherController (my-books).
+2022-07-01 19:18:02.935 -06:00 [INF] This is just a log in GetAllPublishers
+2022-07-01 19:18:05.490 -06:00 [INF] Entity Framework Core 6.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.6' with options: None
+2022-07-01 19:18:06.002 -06:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[Name]
+FROM [Publishers] AS [p]
+ORDER BY [p].[Name]
+2022-07-01 19:18:06.058 -06:00 [INF] Executing OkObjectResult, writing value of type 'my_books.Data.Paging.PaginatedList`1[[my_books.Data.Models.Publisher, my-books, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-07-01 19:18:06.095 -06:00 [INF] Executed action my_books.Controllers.PublisherController.GetAllPublishers (my-books) in 3305.3002ms
+2022-07-01 19:18:06.096 -06:00 [INF] Executed endpoint 'my_books.Controllers.PublisherController.GetAllPublishers (my-books)'
+2022-07-01 19:18:06.106 -06:00 [INF] Request finished HTTP/2 GET https://localhost:44308/api/publisher/get-all-publishers - - - 200 - application/json;+charset=utf-8 3472.5583ms
+07/01/2022 19:19:27 -06:00 [Information] - Message: This is just a log in GetAllPublishers
+07/01/2022 19:22:30 -06:00 [Error] - Message: An unhandled exception has occurred while executing the request.
+System.Exception: This is an exception thrown from GetAllPublishers
+   at my_books.Controllers.PublisherController.GetAllPublishers(String sortBy, String searchString, Int32 pageNumber) in C:\Users\dmorales\source\repos\my-books\my-books\Controllers\PublisherController.cs:line 27
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+07/01/2022 19:25:17 -06:00 [Error] - Message: An unhandled exception has occurred while executing the request.
+System.Exception: This is an exception thrown from GetAllPublishers
+   at my_books.Controllers.PublisherController.GetAllPublishers(String sortBy, String searchString, Int32 pageNumber) in C:\Users\dmorales\source\repos\my-books\my-books\Controllers\PublisherController.cs:line 27
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+07/01/2022 19:34:44 -06:00 [Error] - Message: An unhandled exception has occurred while executing the request.
+System.Exception: This is an exception thrown from GetAllPublishers
+   at my_books.Controllers.PublisherController.GetAllPublishers(String sortBy, String searchString, Int32 pageNumber) in C:\Users\dmorales\source\repos\my-books\my-books\Controllers\PublisherController.cs:line 27
+   at lambda_method2(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+07/01/2022 19:35:18 -06:00 [Information] - Message: This is just a log in GetAllPublishers
